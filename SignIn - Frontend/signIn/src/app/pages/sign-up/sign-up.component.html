@@ -1,0 +1,35 @@
+<div class="vh-100 d-flex align-items-center">
+
+  <div class="w-100">
+    <div class="row my-2 form-group">
+      <div class="col-md-4 ">
+        <label for="">Nome</label>
+        <input class="form-control" type="text" [(ngModel)]="user.name">
+      </div>
+      <div class="col-md-4 form-group">
+        <label for="">Documento</label>
+        <input class="form-control" mask="000.000.000-99" type="text" [(ngModel)]="user.document">
+      </div>
+      <div class="col-md-4 form group">
+        <label for="">Email</label>
+        <input class="form-control" type="text" [(ngModel)]="user.email">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="">Data de nascimento</label>
+        <input class="form-control" type="datetime" [(ngModel)]="user.birthDate" >
+      </div>
+      <div class="col-md-6 form group">
+        <label for="">CEP</label>
+        <input class="form-control" type="text" mask="00000-000" [(ngModel)]="user.zipCode" >
+    </div>
+  </div>
+  <div class="text-center mt-4">
+    <button class="btn btn-primary" *ngIf="(!edit); else elseBlock" (click)="signUpUser()" >Cadastrar</button>
+  </div>
+  <ng-template #elseBlock class="text-center mt-4">
+    <button  class="btn btn-primary" (click)="editUser()" >Editar</button>
+  </ng-template>
+</div>
+
