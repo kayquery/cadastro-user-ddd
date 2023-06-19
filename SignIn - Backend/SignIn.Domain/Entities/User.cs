@@ -46,7 +46,9 @@ namespace SignIn.Domain.Entities
             Name = userDTO.Name;
             BirthDate = userDTO.BirthDate;
             ZipCode = userDTO.ZipCode;
+            BirthDate = userDTO.BirthDate;
             UpdatedAt = DateTime.UtcNow;
+            Email = userDTO.Email;
         }
 
     }

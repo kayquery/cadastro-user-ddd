@@ -60,7 +60,7 @@ namespace SignIn.Application.Services
             if (!await UserExists(userId))
                 return new Result(null);
 
-            User user = new(userDTO);
+            User user = await _userRepository.GetById(userId);
 
             user.Update(userDTO);
 
